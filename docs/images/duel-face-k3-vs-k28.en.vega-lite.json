@@ -1,0 +1,153 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "k3 vs K2.8 Preview: completion by capability face (Sep 2026, high band, same 23 cases)",
+    "fontSize": 14
+  },
+  "data": {
+    "values": [
+      {
+        "face": "build",
+        "model": "k3",
+        "v": 0.958
+      },
+      {
+        "face": "build",
+        "model": "K2.8",
+        "v": 0.958
+      },
+      {
+        "face": "text",
+        "model": "k3",
+        "v": 1.0
+      },
+      {
+        "face": "text",
+        "model": "K2.8",
+        "v": 1.0
+      },
+      {
+        "face": "ops",
+        "model": "k3",
+        "v": 1.0
+      },
+      {
+        "face": "ops",
+        "model": "K2.8",
+        "v": 0.933
+      },
+      {
+        "face": "req-drift",
+        "model": "k3",
+        "v": 1.0
+      },
+      {
+        "face": "req-drift",
+        "model": "K2.8",
+        "v": 1.0
+      },
+      {
+        "face": "verify",
+        "model": "k3",
+        "v": 0.481
+      },
+      {
+        "face": "verify",
+        "model": "K2.8",
+        "v": 0.593
+      },
+      {
+        "face": "review",
+        "model": "k3",
+        "v": 0.556
+      },
+      {
+        "face": "review",
+        "model": "K2.8",
+        "v": 0.389
+      },
+      {
+        "face": "vision",
+        "model": "k3",
+        "v": 0.778
+      },
+      {
+        "face": "vision",
+        "model": "K2.8",
+        "v": 0.667
+      },
+      {
+        "face": "ui-build",
+        "model": "k3",
+        "v": 0.0
+      },
+      {
+        "face": "ui-build",
+        "model": "K2.8",
+        "v": 0.0
+      }
+    ]
+  },
+  "width": 480,
+  "height": 300,
+  "mark": {
+    "type": "bar"
+  },
+  "encoding": {
+    "x": {
+      "field": "face",
+      "type": "nominal",
+      "title": null,
+      "axis": {
+        "labelLimit": 0,
+        "labelAngle": 0
+      }
+    },
+    "y": {
+      "field": "v",
+      "type": "quantitative",
+      "title": "completion (normalized pin pass rate)",
+      "axis": {
+        "format": ".0%"
+      },
+      "scale": {
+        "domain": [
+          0,
+          1
+        ]
+      }
+    },
+    "xOffset": {
+      "field": "model"
+    },
+    "color": {
+      "field": "model",
+      "scale": {
+        "domain": [
+          "k3",
+          "K2.8"
+        ],
+        "range": [
+          "#00838F",
+          "#26C6DA"
+        ]
+      },
+      "legend": {
+        "title": null,
+        "orient": "bottom"
+      }
+    },
+    "tooltip": [
+      {
+        "field": "face"
+      },
+      {
+        "field": "model"
+      },
+      {
+        "field": "v",
+        "format": ".1%"
+      }
+    ]
+  }
+}

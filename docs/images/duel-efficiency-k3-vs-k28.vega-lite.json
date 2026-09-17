@@ -1,0 +1,84 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "同分段的效率差：26 卷墙钟合计与输出 token（high 档）",
+    "fontSize": 14
+  },
+  "data": {
+    "values": [
+      {
+        "metric": "墙钟（小时）",
+        "model": "k3",
+        "v": 2.76
+      },
+      {
+        "metric": "墙钟（小时）",
+        "model": "K2.8",
+        "v": 2.02
+      },
+      {
+        "metric": "输出 token（万）",
+        "model": "k3",
+        "v": 28.5
+      },
+      {
+        "metric": "输出 token（万）",
+        "model": "K2.8",
+        "v": 24.7
+      }
+    ]
+  },
+  "width": 220,
+  "height": 260,
+  "mark": {
+    "type": "bar"
+  },
+  "encoding": {
+    "column": {
+      "field": "metric",
+      "type": "nominal",
+      "title": null,
+      "header": {
+        "labelLimit": 0
+      }
+    },
+    "x": {
+      "field": "model",
+      "type": "nominal",
+      "title": null,
+      "axis": {
+        "labelLimit": 0
+      }
+    },
+    "y": {
+      "field": "v",
+      "type": "quantitative",
+      "title": null
+    },
+    "color": {
+      "field": "model",
+      "scale": {
+        "domain": [
+          "k3",
+          "K2.8"
+        ],
+        "range": [
+          "#00838F",
+          "#26C6DA"
+        ]
+      },
+      "legend": null
+    },
+    "tooltip": [
+      {
+        "field": "metric"
+      },
+      {
+        "field": "model"
+      },
+      {
+        "field": "v"
+      }
+    ]
+  }
+}

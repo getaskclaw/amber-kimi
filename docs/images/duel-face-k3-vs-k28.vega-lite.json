@@ -1,0 +1,153 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "k3 vs K2.8 Preview：面级完成度对拍（2026-09，high 档，同 23 案同哈希）",
+    "fontSize": 14
+  },
+  "data": {
+    "values": [
+      {
+        "face": "编码",
+        "model": "k3",
+        "v": 0.958
+      },
+      {
+        "face": "编码",
+        "model": "K2.8",
+        "v": 0.958
+      },
+      {
+        "face": "文本",
+        "model": "k3",
+        "v": 1.0
+      },
+      {
+        "face": "文本",
+        "model": "K2.8",
+        "v": 1.0
+      },
+      {
+        "face": "运维",
+        "model": "k3",
+        "v": 1.0
+      },
+      {
+        "face": "运维",
+        "model": "K2.8",
+        "v": 0.933
+      },
+      {
+        "face": "需求漂移",
+        "model": "k3",
+        "v": 1.0
+      },
+      {
+        "face": "需求漂移",
+        "model": "K2.8",
+        "v": 1.0
+      },
+      {
+        "face": "核验",
+        "model": "k3",
+        "v": 0.481
+      },
+      {
+        "face": "核验",
+        "model": "K2.8",
+        "v": 0.593
+      },
+      {
+        "face": "审查",
+        "model": "k3",
+        "v": 0.556
+      },
+      {
+        "face": "审查",
+        "model": "K2.8",
+        "v": 0.389
+      },
+      {
+        "face": "视觉",
+        "model": "k3",
+        "v": 0.778
+      },
+      {
+        "face": "视觉",
+        "model": "K2.8",
+        "v": 0.667
+      },
+      {
+        "face": "前端",
+        "model": "k3",
+        "v": 0.0
+      },
+      {
+        "face": "前端",
+        "model": "K2.8",
+        "v": 0.0
+      }
+    ]
+  },
+  "width": 480,
+  "height": 300,
+  "mark": {
+    "type": "bar"
+  },
+  "encoding": {
+    "x": {
+      "field": "face",
+      "type": "nominal",
+      "title": null,
+      "axis": {
+        "labelLimit": 0,
+        "labelAngle": 0
+      }
+    },
+    "y": {
+      "field": "v",
+      "type": "quantitative",
+      "title": "完成度（钉过率归一）",
+      "axis": {
+        "format": ".0%"
+      },
+      "scale": {
+        "domain": [
+          0,
+          1
+        ]
+      }
+    },
+    "xOffset": {
+      "field": "model"
+    },
+    "color": {
+      "field": "model",
+      "scale": {
+        "domain": [
+          "k3",
+          "K2.8"
+        ],
+        "range": [
+          "#00838F",
+          "#26C6DA"
+        ]
+      },
+      "legend": {
+        "title": null,
+        "orient": "bottom"
+      }
+    },
+    "tooltip": [
+      {
+        "field": "face"
+      },
+      {
+        "field": "model"
+      },
+      {
+        "field": "v",
+        "format": ".1%"
+      }
+    ]
+  }
+}

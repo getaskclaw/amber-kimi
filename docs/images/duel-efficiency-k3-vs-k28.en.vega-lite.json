@@ -1,0 +1,84 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Same band, less burn: 26-paper wall clock & output tokens (high)",
+    "fontSize": 14
+  },
+  "data": {
+    "values": [
+      {
+        "metric": "wall clock (hours)",
+        "model": "k3",
+        "v": 2.76
+      },
+      {
+        "metric": "wall clock (hours)",
+        "model": "K2.8",
+        "v": 2.02
+      },
+      {
+        "metric": "output tokens (10k)",
+        "model": "k3",
+        "v": 28.5
+      },
+      {
+        "metric": "output tokens (10k)",
+        "model": "K2.8",
+        "v": 24.7
+      }
+    ]
+  },
+  "width": 220,
+  "height": 260,
+  "mark": {
+    "type": "bar"
+  },
+  "encoding": {
+    "column": {
+      "field": "metric",
+      "type": "nominal",
+      "title": null,
+      "header": {
+        "labelLimit": 0
+      }
+    },
+    "x": {
+      "field": "model",
+      "type": "nominal",
+      "title": null,
+      "axis": {
+        "labelLimit": 0
+      }
+    },
+    "y": {
+      "field": "v",
+      "type": "quantitative",
+      "title": null
+    },
+    "color": {
+      "field": "model",
+      "scale": {
+        "domain": [
+          "k3",
+          "K2.8"
+        ],
+        "range": [
+          "#00838F",
+          "#26C6DA"
+        ]
+      },
+      "legend": null
+    },
+    "tooltip": [
+      {
+        "field": "metric"
+      },
+      {
+        "field": "model"
+      },
+      {
+        "field": "v"
+      }
+    ]
+  }
+}

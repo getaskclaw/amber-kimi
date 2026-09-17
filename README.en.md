@@ -17,6 +17,13 @@ Public results from running Kimi (Moonshot AI)'s official coding endpoint (`api.
 
 Kimi official coding endpoint, high band, same 23 cases same hashes: **k3 17/23** (15/21 on the public 21-case subset) — coding 5/6 (full marks on the hard discriminator A-442d4aab 7/7 and A-569dbe0d 10/10) + ops 6/6 clean sweep + the riding-line vision case A-ea80d793 passed (3.0); weaknesses: verification 0/3 and an incomplete UI deliverable. Full matrix and lane ledger in the [2026-W38 issue](results/2026-W38.md). Chart sources live next to the PNGs (`docs/images/`, Vega-Lite).
 
+### Extra race: k3 vs K2.8 Preview (Addendum 09-17)
+
+![k3 vs K2.8 completion by capability face](docs/images/duel-face-k3-vs-k28.en.png)
+![Same band, less burn](docs/images/duel-efficiency-k3-vs-k28.en.png)
+
+On Sep 11 Moonshot silently re-pointed `kimi-for-coding` to **K2.8 Preview** (model ID unchanged). Same-library, same-band duel: **coding / text / requirement-drift faces match k3 paper-for-paper, at 27% less wall clock**; case-level 14/23, with all three gaps on known riding-line cases. But on the adversarial-review case it scored **-17 (k3: -2 — a hallucination flood)**: **K2.8 is fine for daily coding lanes, unusable for review lanes**. It actually beats k3 on the defensive-validation case (7/9 vs 4/9). Full table: the [2026-W38 issue](results/2026-W38.md), "Addendum 2026-09-17" at the end.
+
 ## Publication discipline (red lines)
 
 1. We publish: scores and aggregates, token usage, speed, qualitative verdicts.
@@ -34,6 +41,7 @@ Same model name, same provider, two runs can still score differently — samplin
 | Issue | Candidate | Score (23 cases / 21-case subset) | One-liner |
 |---|---|---|---|
 | [2026-W38](results/2026-W38.md) | **k3** (official coding endpoint flagship) | **17/23** (15/21) | Straight into the #2 tie; coding 5/6 + ops 6/6 + vision pass; verification 0/3, incomplete UI deliverable |
+| ↳ [Addendum 09-17](results/2026-W38.md) | **K2.8 Preview** (`kimi-for-coding`) | **14/23** (12/21) | Matches k3 paper-for-paper on coding / text / req-drift at 27% less wall clock; adversarial review -17 (hallucination flood) — unusable there; defensive validation beats k3 (7/9 vs 4/9) |
 
 ## Disclaimer
 
