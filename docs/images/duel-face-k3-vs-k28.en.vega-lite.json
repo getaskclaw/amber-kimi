@@ -1,153 +1,363 @@
 {
-  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": {
-    "text": "k3 vs K2.8 Preview: completion by capability face (Sep 2026, high band, same 23 cases)",
-    "fontSize": 14
+ "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+ "background": "white",
+ "title": {
+  "text": "k3 → K2.8 Preview: per-face diff (same 23 cases, same hashes, high band)",
+  "fontSize": 16,
+  "anchor": "start",
+  "subtitle": "review −0.17 = hallucination flood (−17 vs −2, unusable for review); verify rises on the defense case 7/9 vs 4/9; ui-build double-zero = same delivery-contract disease",
+  "subtitleFontSize": 11,
+  "subtitleColor": "#777",
+  "subtitlePadding": 6
+ },
+ "width": 480,
+ "height": 256,
+ "config": {
+  "font": "Noto Sans CJK SC",
+  "axis": {
+   "labelFontSize": 12,
+   "titleFontSize": 13
   },
-  "data": {
+  "legend": {
+   "labelFontSize": 12
+  },
+  "view": {
+   "stroke": null
+  }
+ },
+ "layer": [
+  {
+   "data": {
     "values": [
-      {
-        "face": "build",
-        "model": "k3",
-        "v": 0.958
-      },
-      {
-        "face": "build",
-        "model": "K2.8",
-        "v": 0.958
-      },
-      {
-        "face": "text",
-        "model": "k3",
-        "v": 1.0
-      },
-      {
-        "face": "text",
-        "model": "K2.8",
-        "v": 1.0
-      },
-      {
-        "face": "ops",
-        "model": "k3",
-        "v": 1.0
-      },
-      {
-        "face": "ops",
-        "model": "K2.8",
-        "v": 0.933
-      },
-      {
-        "face": "req-drift",
-        "model": "k3",
-        "v": 1.0
-      },
-      {
-        "face": "req-drift",
-        "model": "K2.8",
-        "v": 1.0
-      },
-      {
-        "face": "verify",
-        "model": "k3",
-        "v": 0.481
-      },
-      {
-        "face": "verify",
-        "model": "K2.8",
-        "v": 0.593
-      },
-      {
-        "face": "review",
-        "model": "k3",
-        "v": 0.556
-      },
-      {
-        "face": "review",
-        "model": "K2.8",
-        "v": 0.389
-      },
-      {
-        "face": "vision",
-        "model": "k3",
-        "v": 0.778
-      },
-      {
-        "face": "vision",
-        "model": "K2.8",
-        "v": 0.667
-      },
-      {
-        "face": "ui-build",
-        "model": "k3",
-        "v": 0.0
-      },
-      {
-        "face": "ui-build",
-        "model": "K2.8",
-        "v": 0.0
-      }
+     {
+      "face": "verify",
+      "from": 0.481,
+      "to": 0.593
+     },
+     {
+      "face": "build",
+      "from": 0.958,
+      "to": 0.958
+     },
+     {
+      "face": "text",
+      "from": 1.0,
+      "to": 1.0
+     },
+     {
+      "face": "req-drift",
+      "from": 1.0,
+      "to": 1.0
+     },
+     {
+      "face": "ui-build",
+      "from": 0.0,
+      "to": 0.0
+     },
+     {
+      "face": "ops",
+      "from": 1.0,
+      "to": 0.933
+     },
+     {
+      "face": "vision",
+      "from": 0.778,
+      "to": 0.667
+     },
+     {
+      "face": "review",
+      "from": 0.556,
+      "to": 0.389
+     }
     ]
-  },
-  "width": 480,
-  "height": 300,
-  "mark": {
-    "type": "bar"
-  },
-  "encoding": {
+   },
+   "mark": {
+    "type": "rule",
+    "color": "#ccc",
+    "strokeWidth": 2.5
+   },
+   "encoding": {
     "x": {
-      "field": "face",
-      "type": "nominal",
-      "title": null,
-      "axis": {
-        "labelLimit": 0,
-        "labelAngle": 0
-      }
+     "field": "from",
+     "type": "quantitative"
+    },
+    "x2": {
+     "field": "to"
     },
     "y": {
-      "field": "v",
-      "type": "quantitative",
-      "title": "completion (normalized pin pass rate)",
-      "axis": {
-        "format": ".0%"
-      },
-      "scale": {
-        "domain": [
-          0,
-          1
-        ]
-      }
+     "field": "face",
+     "type": "ordinal",
+     "scale": {
+      "domain": [
+       "verify",
+       "build",
+       "text",
+       "req-drift",
+       "ui-build",
+       "ops",
+       "vision",
+       "review"
+      ]
+     }
+    }
+   }
+  },
+  {
+   "data": {
+    "values": [
+     {
+      "face": "verify",
+      "v": 0.481,
+      "band": "from",
+      "dir": "from"
+     },
+     {
+      "face": "build",
+      "v": 0.958,
+      "band": "from",
+      "dir": "from"
+     },
+     {
+      "face": "text",
+      "v": 1.0,
+      "band": "from",
+      "dir": "from"
+     },
+     {
+      "face": "req-drift",
+      "v": 1.0,
+      "band": "from",
+      "dir": "from"
+     },
+     {
+      "face": "ui-build",
+      "v": 0.0,
+      "band": "from",
+      "dir": "from"
+     },
+     {
+      "face": "ops",
+      "v": 1.0,
+      "band": "from",
+      "dir": "from"
+     },
+     {
+      "face": "vision",
+      "v": 0.778,
+      "band": "from",
+      "dir": "from"
+     },
+     {
+      "face": "review",
+      "v": 0.556,
+      "band": "from",
+      "dir": "from"
+     },
+     {
+      "face": "verify",
+      "v": 0.593,
+      "band": "to",
+      "dir": "gain"
+     },
+     {
+      "face": "build",
+      "v": 0.958,
+      "band": "to",
+      "dir": "flat"
+     },
+     {
+      "face": "text",
+      "v": 1.0,
+      "band": "to",
+      "dir": "flat"
+     },
+     {
+      "face": "req-drift",
+      "v": 1.0,
+      "band": "to",
+      "dir": "flat"
+     },
+     {
+      "face": "ui-build",
+      "v": 0.0,
+      "band": "to",
+      "dir": "flat"
+     },
+     {
+      "face": "ops",
+      "v": 0.933,
+      "band": "to",
+      "dir": "loss"
+     },
+     {
+      "face": "vision",
+      "v": 0.667,
+      "band": "to",
+      "dir": "loss"
+     },
+     {
+      "face": "review",
+      "v": 0.389,
+      "band": "to",
+      "dir": "loss"
+     }
+    ]
+   },
+   "mark": {
+    "type": "point",
+    "filled": true,
+    "opacity": 1,
+    "stroke": "white",
+    "strokeWidth": 1
+   },
+   "encoding": {
+    "x": {
+     "field": "v",
+     "type": "quantitative",
+     "scale": {
+      "domain": [
+       0,
+       1.05
+      ]
+     },
+     "axis": {
+      "title": "completion (pin pass-rate)",
+      "values": [
+       0,
+       0.25,
+       0.5,
+       0.75,
+       1.0
+      ],
+      "grid": true
+     }
     },
-    "xOffset": {
-      "field": "model"
+    "y": {
+     "field": "face",
+     "type": "ordinal",
+     "scale": {
+      "domain": [
+       "verify",
+       "build",
+       "text",
+       "req-drift",
+       "ui-build",
+       "ops",
+       "vision",
+       "review"
+      ]
+     },
+     "axis": {
+      "title": null,
+      "labelFontSize": 12.5
+     }
+    },
+    "size": {
+     "field": "band",
+     "type": "nominal",
+     "scale": {
+      "domain": [
+       "from",
+       "to"
+      ],
+      "range": [
+       190,
+       110
+      ]
+     },
+     "legend": null
     },
     "color": {
-      "field": "model",
-      "scale": {
-        "domain": [
-          "k3",
-          "K2.8"
-        ],
-        "range": [
-          "#00838F",
-          "#26C6DA"
-        ]
-      },
-      "legend": {
-        "title": null,
-        "orient": "bottom"
-      }
-    },
-    "tooltip": [
-      {
-        "field": "face"
-      },
-      {
-        "field": "model"
-      },
-      {
-        "field": "v",
-        "format": ".1%"
-      }
+     "field": "dir",
+     "type": "nominal",
+     "scale": {
+      "domain": [
+       "from",
+       "gain",
+       "flat",
+       "loss"
+      ],
+      "range": [
+       "#999999",
+       "#1e8449",
+       "#5b8fc9",
+       "#c0392b"
+      ]
+     },
+     "legend": {
+      "title": null,
+      "orient": "bottom",
+      "offset": 10,
+      "labelExpr": "{'from':'k3 (09-15)','gain':'K2.8 up','flat':'flat','loss':'K2.8 down'}[datum.value]"
+     }
+    }
+   }
+  },
+  {
+   "data": {
+    "values": [
+     {
+      "face": "verify",
+      "v": 0.593,
+      "t": "+0.11"
+     },
+     {
+      "face": "build",
+      "v": 0.958,
+      "t": "0"
+     },
+     {
+      "face": "text",
+      "v": 1.0,
+      "t": "0"
+     },
+     {
+      "face": "req-drift",
+      "v": 1.0,
+      "t": "0"
+     },
+     {
+      "face": "ui-build",
+      "v": 0.0,
+      "t": "0"
+     },
+     {
+      "face": "ops",
+      "v": 1.0,
+      "t": "-0.07"
+     },
+     {
+      "face": "vision",
+      "v": 0.778,
+      "t": "-0.11"
+     },
+     {
+      "face": "review",
+      "v": 0.556,
+      "t": "-0.17"
+     }
     ]
+   },
+   "mark": {
+    "type": "text",
+    "fontSize": 11,
+    "align": "left",
+    "dx": 10,
+    "color": "#555"
+   },
+   "encoding": {
+    "x": {
+     "field": "v",
+     "type": "quantitative"
+    },
+    "y": {
+     "field": "face",
+     "type": "ordinal"
+    },
+    "text": {
+     "field": "t"
+    }
+   }
   }
+ ]
 }

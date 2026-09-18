@@ -1,0 +1,150 @@
+{
+ "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+ "background": "white",
+ "title": {
+  "text": "k3 档线：平线家族——low 15 / high 17（/23 案）",
+  "fontSize": 16,
+  "anchor": "start",
+  "subtitle": "挂科集仅差 2 案；low 的 token 与墙钟约半——选档按成本速度，不按分",
+  "subtitleFontSize": 11,
+  "subtitleColor": "#777",
+  "subtitlePadding": 6
+ },
+ "width": 460,
+ "height": 300,
+ "config": {
+  "font": "Noto Sans CJK SC",
+  "axis": {
+   "labelFontSize": 12,
+   "titleFontSize": 13
+  },
+  "legend": {
+   "labelFontSize": 12
+  },
+  "view": {
+   "stroke": null
+  }
+ },
+ "layer": [
+  {
+   "data": {
+    "values": [
+     {
+      "band": "low",
+      "seg": "实得",
+      "v": 15,
+      "ord": 1
+     },
+     {
+      "band": "high",
+      "seg": "实得",
+      "v": 17,
+      "ord": 1
+     }
+    ]
+   },
+   "mark": {
+    "type": "bar",
+    "cornerRadiusTopLeft": 3,
+    "cornerRadiusTopRight": 3
+   },
+   "encoding": {
+    "x": {
+     "field": "band",
+     "type": "ordinal",
+     "scale": {
+      "domain": [
+       "low",
+       "high"
+      ]
+     },
+     "axis": {
+      "title": null,
+      "labelFontSize": 12
+     }
+    },
+    "y": {
+     "field": "v",
+     "type": "quantitative",
+     "aggregate": "sum",
+     "scale": {
+      "domain": [
+       0,
+       23
+      ]
+     },
+     "axis": {
+      "title": "通过案数（/ 23）"
+     }
+    },
+    "color": {
+     "field": "seg",
+     "type": "nominal",
+     "scale": {
+      "domain": [
+       "实得",
+       "混杂"
+      ],
+      "range": [
+       "#5b8fc9",
+       "#e8a0a0"
+      ]
+     },
+     "legend": null
+    },
+    "order": {
+     "field": "ord",
+     "type": "quantitative"
+    }
+   }
+  },
+  {
+   "data": {
+    "values": [
+     {
+      "band": "low",
+      "total": 15,
+      "label": "15"
+     },
+     {
+      "band": "high",
+      "total": 17,
+      "label": "17"
+     }
+    ]
+   },
+   "mark": {
+    "type": "text",
+    "dy": -8,
+    "fontSize": 13,
+    "fontWeight": "bold",
+    "color": "#333"
+   },
+   "encoding": {
+    "x": {
+     "field": "band",
+     "type": "ordinal",
+     "scale": {
+      "domain": [
+       "low",
+       "high"
+      ]
+     }
+    },
+    "y": {
+     "field": "total",
+     "type": "quantitative",
+     "scale": {
+      "domain": [
+       0,
+       23
+      ]
+     }
+    },
+    "text": {
+     "field": "label"
+    }
+   }
+  }
+ ]
+}

@@ -13,14 +13,14 @@ English: [README.en.md](README.en.md)
 
 ## 一分钟看懂 W38
 
-![W38 成绩单：k3 17/23 入档即 #2 并列](docs/images/scorecard-2026-w38.png)
+![W38 成绩单：k3 17/23 入档即 #2 并列](docs/images/scorecard-2026-w38.png?v=20260917)
 
 Kimi 官方 coding 端点、high 档、23 案同哈希：**k3 17/23**（公共 21 案子集 15/21）——编码面 5/6（硬区分器 A-442d4aab 7/7 满分、A-569dbe0d 10/10 满分）+ 运维面 6/6 全清 + 视觉骑线案 A-ea80d793 过线（3.0）；短板在核验面 0/3 与 UI 案交付缺文件。逐案矩阵与车道账本见 [2026-W38 期文](results/2026-W38.md)。图源与 PNG 同目录（`docs/images/`，Vega-Lite）。
 
 ### 加赛：k3 vs K2.8 Preview（09-17 Addendum）
 
-![k3 vs K2.8 面级完成度对拍](docs/images/duel-face-k3-vs-k28.png)
-![同分段的效率差](docs/images/duel-efficiency-k3-vs-k28.png)
+![k3 vs K2.8 面级完成度对拍](docs/images/duel-face-k3-vs-k28.png?v=20260917)
+![同分段的效率差](docs/images/duel-efficiency-k3-vs-k28.png?v=20260917)
 
 9 月 11 日 Moonshot 把 `kimi-for-coding` 静默升级为 **K2.8 Preview**（模型 ID 不变）。实测同库同档对拍：**编码 / 文本 / 需求漂移三面与 k3 逐卷同分，墙钟快 27%**；案级 14/23，与 k3 的 3 案差全部落在已知抖动 / 骑线案带。但对抗审查案 **-17（k3 为 -2，幻觉洪水级）**——**日常编码道可用 K2.8，审查道不能**。防御校验案 K2.8 反而更强（7/9 vs 4/9）。全表见 [2026-W38 期文](results/2026-W38.md) 文末「Addendum 2026-09-17」。
 

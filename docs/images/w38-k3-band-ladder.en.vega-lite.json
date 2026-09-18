@@ -1,0 +1,150 @@
+{
+ "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+ "background": "white",
+ "title": {
+  "text": "k3 band line: a flat family — low 15 / high 17 (/23 cases)",
+  "fontSize": 16,
+  "anchor": "start",
+  "subtitle": "fail sets differ by 2 cases; low costs ~half the tokens and wall clock — pick band by cost, not score",
+  "subtitleFontSize": 11,
+  "subtitleColor": "#777",
+  "subtitlePadding": 6
+ },
+ "width": 460,
+ "height": 300,
+ "config": {
+  "font": "Noto Sans CJK SC",
+  "axis": {
+   "labelFontSize": 12,
+   "titleFontSize": 13
+  },
+  "legend": {
+   "labelFontSize": 12
+  },
+  "view": {
+   "stroke": null
+  }
+ },
+ "layer": [
+  {
+   "data": {
+    "values": [
+     {
+      "band": "low",
+      "seg": "earned",
+      "v": 15,
+      "ord": 1
+     },
+     {
+      "band": "high",
+      "seg": "earned",
+      "v": 17,
+      "ord": 1
+     }
+    ]
+   },
+   "mark": {
+    "type": "bar",
+    "cornerRadiusTopLeft": 3,
+    "cornerRadiusTopRight": 3
+   },
+   "encoding": {
+    "x": {
+     "field": "band",
+     "type": "ordinal",
+     "scale": {
+      "domain": [
+       "low",
+       "high"
+      ]
+     },
+     "axis": {
+      "title": null,
+      "labelFontSize": 12
+     }
+    },
+    "y": {
+     "field": "v",
+     "type": "quantitative",
+     "aggregate": "sum",
+     "scale": {
+      "domain": [
+       0,
+       23
+      ]
+     },
+     "axis": {
+      "title": "cases passed (/ 23)"
+     }
+    },
+    "color": {
+     "field": "seg",
+     "type": "nominal",
+     "scale": {
+      "domain": [
+       "earned",
+       "confound"
+      ],
+      "range": [
+       "#5b8fc9",
+       "#e8a0a0"
+      ]
+     },
+     "legend": null
+    },
+    "order": {
+     "field": "ord",
+     "type": "quantitative"
+    }
+   }
+  },
+  {
+   "data": {
+    "values": [
+     {
+      "band": "low",
+      "total": 15,
+      "label": "15"
+     },
+     {
+      "band": "high",
+      "total": 17,
+      "label": "17"
+     }
+    ]
+   },
+   "mark": {
+    "type": "text",
+    "dy": -8,
+    "fontSize": 13,
+    "fontWeight": "bold",
+    "color": "#333"
+   },
+   "encoding": {
+    "x": {
+     "field": "band",
+     "type": "ordinal",
+     "scale": {
+      "domain": [
+       "low",
+       "high"
+      ]
+     }
+    },
+    "y": {
+     "field": "total",
+     "type": "quantitative",
+     "scale": {
+      "domain": [
+       0,
+       23
+      ]
+     }
+    },
+    "text": {
+     "field": "label"
+    }
+   }
+  }
+ ]
+}

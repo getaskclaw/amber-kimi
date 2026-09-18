@@ -1,153 +1,363 @@
 {
-  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": {
-    "text": "k3 vs K2.8 Preview：面级完成度对拍（2026-09，high 档，同 23 案同哈希）",
-    "fontSize": 14
+ "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+ "background": "white",
+ "title": {
+  "text": "k3 → K2.8 Preview：面级对拍（同 23 案同哈希，high 档）",
+  "fontSize": 16,
+  "anchor": "start",
+  "subtitle": "审查 −0.17 = 幻觉洪水（-17 vs -2，审查道不可用）；核验反升靠防御案 7/9 vs 4/9；前端双零 = 同款交付缺文件病",
+  "subtitleFontSize": 11,
+  "subtitleColor": "#777",
+  "subtitlePadding": 6
+ },
+ "width": 480,
+ "height": 256,
+ "config": {
+  "font": "Noto Sans CJK SC",
+  "axis": {
+   "labelFontSize": 12,
+   "titleFontSize": 13
   },
-  "data": {
+  "legend": {
+   "labelFontSize": 12
+  },
+  "view": {
+   "stroke": null
+  }
+ },
+ "layer": [
+  {
+   "data": {
     "values": [
-      {
-        "face": "编码",
-        "model": "k3",
-        "v": 0.958
-      },
-      {
-        "face": "编码",
-        "model": "K2.8",
-        "v": 0.958
-      },
-      {
-        "face": "文本",
-        "model": "k3",
-        "v": 1.0
-      },
-      {
-        "face": "文本",
-        "model": "K2.8",
-        "v": 1.0
-      },
-      {
-        "face": "运维",
-        "model": "k3",
-        "v": 1.0
-      },
-      {
-        "face": "运维",
-        "model": "K2.8",
-        "v": 0.933
-      },
-      {
-        "face": "需求漂移",
-        "model": "k3",
-        "v": 1.0
-      },
-      {
-        "face": "需求漂移",
-        "model": "K2.8",
-        "v": 1.0
-      },
-      {
-        "face": "核验",
-        "model": "k3",
-        "v": 0.481
-      },
-      {
-        "face": "核验",
-        "model": "K2.8",
-        "v": 0.593
-      },
-      {
-        "face": "审查",
-        "model": "k3",
-        "v": 0.556
-      },
-      {
-        "face": "审查",
-        "model": "K2.8",
-        "v": 0.389
-      },
-      {
-        "face": "视觉",
-        "model": "k3",
-        "v": 0.778
-      },
-      {
-        "face": "视觉",
-        "model": "K2.8",
-        "v": 0.667
-      },
-      {
-        "face": "前端",
-        "model": "k3",
-        "v": 0.0
-      },
-      {
-        "face": "前端",
-        "model": "K2.8",
-        "v": 0.0
-      }
+     {
+      "face": "核验",
+      "from": 0.481,
+      "to": 0.593
+     },
+     {
+      "face": "编码",
+      "from": 0.958,
+      "to": 0.958
+     },
+     {
+      "face": "文本",
+      "from": 1.0,
+      "to": 1.0
+     },
+     {
+      "face": "需求漂移",
+      "from": 1.0,
+      "to": 1.0
+     },
+     {
+      "face": "前端",
+      "from": 0.0,
+      "to": 0.0
+     },
+     {
+      "face": "运维",
+      "from": 1.0,
+      "to": 0.933
+     },
+     {
+      "face": "视觉",
+      "from": 0.778,
+      "to": 0.667
+     },
+     {
+      "face": "审查",
+      "from": 0.556,
+      "to": 0.389
+     }
     ]
-  },
-  "width": 480,
-  "height": 300,
-  "mark": {
-    "type": "bar"
-  },
-  "encoding": {
+   },
+   "mark": {
+    "type": "rule",
+    "color": "#ccc",
+    "strokeWidth": 2.5
+   },
+   "encoding": {
     "x": {
-      "field": "face",
-      "type": "nominal",
-      "title": null,
-      "axis": {
-        "labelLimit": 0,
-        "labelAngle": 0
-      }
+     "field": "from",
+     "type": "quantitative"
+    },
+    "x2": {
+     "field": "to"
     },
     "y": {
-      "field": "v",
-      "type": "quantitative",
-      "title": "完成度（钉过率归一）",
-      "axis": {
-        "format": ".0%"
-      },
-      "scale": {
-        "domain": [
-          0,
-          1
-        ]
-      }
+     "field": "face",
+     "type": "ordinal",
+     "scale": {
+      "domain": [
+       "核验",
+       "编码",
+       "文本",
+       "需求漂移",
+       "前端",
+       "运维",
+       "视觉",
+       "审查"
+      ]
+     }
+    }
+   }
+  },
+  {
+   "data": {
+    "values": [
+     {
+      "face": "核验",
+      "v": 0.481,
+      "band": "from",
+      "dir": "from"
+     },
+     {
+      "face": "编码",
+      "v": 0.958,
+      "band": "from",
+      "dir": "from"
+     },
+     {
+      "face": "文本",
+      "v": 1.0,
+      "band": "from",
+      "dir": "from"
+     },
+     {
+      "face": "需求漂移",
+      "v": 1.0,
+      "band": "from",
+      "dir": "from"
+     },
+     {
+      "face": "前端",
+      "v": 0.0,
+      "band": "from",
+      "dir": "from"
+     },
+     {
+      "face": "运维",
+      "v": 1.0,
+      "band": "from",
+      "dir": "from"
+     },
+     {
+      "face": "视觉",
+      "v": 0.778,
+      "band": "from",
+      "dir": "from"
+     },
+     {
+      "face": "审查",
+      "v": 0.556,
+      "band": "from",
+      "dir": "from"
+     },
+     {
+      "face": "核验",
+      "v": 0.593,
+      "band": "to",
+      "dir": "gain"
+     },
+     {
+      "face": "编码",
+      "v": 0.958,
+      "band": "to",
+      "dir": "flat"
+     },
+     {
+      "face": "文本",
+      "v": 1.0,
+      "band": "to",
+      "dir": "flat"
+     },
+     {
+      "face": "需求漂移",
+      "v": 1.0,
+      "band": "to",
+      "dir": "flat"
+     },
+     {
+      "face": "前端",
+      "v": 0.0,
+      "band": "to",
+      "dir": "flat"
+     },
+     {
+      "face": "运维",
+      "v": 0.933,
+      "band": "to",
+      "dir": "loss"
+     },
+     {
+      "face": "视觉",
+      "v": 0.667,
+      "band": "to",
+      "dir": "loss"
+     },
+     {
+      "face": "审查",
+      "v": 0.389,
+      "band": "to",
+      "dir": "loss"
+     }
+    ]
+   },
+   "mark": {
+    "type": "point",
+    "filled": true,
+    "opacity": 1,
+    "stroke": "white",
+    "strokeWidth": 1
+   },
+   "encoding": {
+    "x": {
+     "field": "v",
+     "type": "quantitative",
+     "scale": {
+      "domain": [
+       0,
+       1.05
+      ]
+     },
+     "axis": {
+      "title": "完成度（钉过率）",
+      "values": [
+       0,
+       0.25,
+       0.5,
+       0.75,
+       1.0
+      ],
+      "grid": true
+     }
     },
-    "xOffset": {
-      "field": "model"
+    "y": {
+     "field": "face",
+     "type": "ordinal",
+     "scale": {
+      "domain": [
+       "核验",
+       "编码",
+       "文本",
+       "需求漂移",
+       "前端",
+       "运维",
+       "视觉",
+       "审查"
+      ]
+     },
+     "axis": {
+      "title": null,
+      "labelFontSize": 12.5
+     }
+    },
+    "size": {
+     "field": "band",
+     "type": "nominal",
+     "scale": {
+      "domain": [
+       "from",
+       "to"
+      ],
+      "range": [
+       190,
+       110
+      ]
+     },
+     "legend": null
     },
     "color": {
-      "field": "model",
-      "scale": {
-        "domain": [
-          "k3",
-          "K2.8"
-        ],
-        "range": [
-          "#00838F",
-          "#26C6DA"
-        ]
-      },
-      "legend": {
-        "title": null,
-        "orient": "bottom"
-      }
-    },
-    "tooltip": [
-      {
-        "field": "face"
-      },
-      {
-        "field": "model"
-      },
-      {
-        "field": "v",
-        "format": ".1%"
-      }
+     "field": "dir",
+     "type": "nominal",
+     "scale": {
+      "domain": [
+       "from",
+       "gain",
+       "flat",
+       "loss"
+      ],
+      "range": [
+       "#999999",
+       "#1e8449",
+       "#5b8fc9",
+       "#c0392b"
+      ]
+     },
+     "legend": {
+      "title": null,
+      "orient": "bottom",
+      "offset": 10,
+      "labelExpr": "{'from':'k3（09-15）','gain':'K2.8 涨','flat':'持平','loss':'K2.8 跌'}[datum.value]"
+     }
+    }
+   }
+  },
+  {
+   "data": {
+    "values": [
+     {
+      "face": "核验",
+      "v": 0.593,
+      "t": "+0.11"
+     },
+     {
+      "face": "编码",
+      "v": 0.958,
+      "t": "0"
+     },
+     {
+      "face": "文本",
+      "v": 1.0,
+      "t": "0"
+     },
+     {
+      "face": "需求漂移",
+      "v": 1.0,
+      "t": "0"
+     },
+     {
+      "face": "前端",
+      "v": 0.0,
+      "t": "0"
+     },
+     {
+      "face": "运维",
+      "v": 1.0,
+      "t": "-0.07"
+     },
+     {
+      "face": "视觉",
+      "v": 0.778,
+      "t": "-0.11"
+     },
+     {
+      "face": "审查",
+      "v": 0.556,
+      "t": "-0.17"
+     }
     ]
+   },
+   "mark": {
+    "type": "text",
+    "fontSize": 11,
+    "align": "left",
+    "dx": 10,
+    "color": "#555"
+   },
+   "encoding": {
+    "x": {
+     "field": "v",
+     "type": "quantitative"
+    },
+    "y": {
+     "field": "face",
+     "type": "ordinal"
+    },
+    "text": {
+     "field": "t"
+    }
+   }
   }
+ ]
 }

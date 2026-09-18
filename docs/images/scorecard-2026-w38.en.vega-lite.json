@@ -1,195 +1,228 @@
 {
-  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "background": "white",
-  "title": {
-    "text": [
-      "W38 scorecard: k3 17/23 — straight into the #2 tie",
-      "(full 23-case library; Kimi official coding endpoint, band=high)"
-    ],
-    "fontSize": 16,
-    "anchor": "start",
-    "subtitle": "small print under bars = public 21-case subset score (see W38 issue, The ladder)",
-    "subtitleFontSize": 11,
-    "subtitleColor": "#777",
-    "subtitlePadding": 6
+ "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+ "background": "white",
+ "title": {
+  "text": "k3 @ high per-face completion (W38 debut 17/23, tied #2 on entry)",
+  "fontSize": 16,
+  "anchor": "start",
+  "subtitle": "build-side faces near-perfect; the weak spots: verify 0/3, adversarial review -2, ui-build missing deliverable",
+  "subtitleFontSize": 11,
+  "subtitleColor": "#777",
+  "subtitlePadding": 6
+ },
+ "width": 480,
+ "height": 256,
+ "config": {
+  "font": "Noto Sans CJK SC",
+  "axis": {
+   "labelFontSize": 12,
+   "titleFontSize": 13
   },
-  "data": {
+  "legend": {
+   "labelFontSize": 12
+  },
+  "view": {
+   "stroke": null
+  }
+ },
+ "layer": [
+  {
+   "data": {
     "values": [
-      {
-        "model": "k3",
-        "pass": 17,
-        "subset": "(15/21)"
-      }
+     {
+      "face": "text",
+      "v": 1.0,
+      "tier": "strong",
+      "lab": "3/3 cases, pins perfect"
+     },
+     {
+      "face": "ops",
+      "v": 1.0,
+      "tier": "strong",
+      "lab": "6/6 cases clean"
+     },
+     {
+      "face": "req-drift",
+      "v": 1.0,
+      "tier": "strong",
+      "lab": "all 4 variants green"
+     },
+     {
+      "face": "build",
+      "v": 0.958,
+      "tier": "strong",
+      "lab": "5/6 cases, two perfect"
+     },
+     {
+      "face": "vision",
+      "v": 0.778,
+      "tier": "mid",
+      "lab": "riding-line case passed (3.0)"
+     },
+     {
+      "face": "review",
+      "v": 0.556,
+      "tier": "mid",
+      "lab": "one pass, one fail (-2)"
+     },
+     {
+      "face": "verify",
+      "v": 0.481,
+      "tier": "mid",
+      "lab": "0/3 cases"
+     },
+     {
+      "face": "ui-build",
+      "v": 0.0,
+      "tier": "weak",
+      "lab": "missing deliverable file"
+     }
     ]
-  },
-  "width": 420,
-  "height": 300,
-  "config": {
-    "font": "Noto Sans CJK SC",
-    "axis": {
-      "labelFontSize": 12,
-      "titleFontSize": 13
+   },
+   "mark": {
+    "type": "bar",
+    "cornerRadiusTopRight": 3,
+    "cornerRadiusBottomRight": 3
+   },
+   "encoding": {
+    "y": {
+     "field": "face",
+     "type": "ordinal",
+     "scale": {
+      "domain": [
+       "text",
+       "ops",
+       "req-drift",
+       "build",
+       "vision",
+       "review",
+       "verify",
+       "ui-build"
+      ]
+     },
+     "axis": {
+      "title": null,
+      "labelFontSize": 12.5
+     }
     },
-    "legend": {
-      "labelFontSize": 12
+    "x": {
+     "field": "v",
+     "type": "quantitative",
+     "scale": {
+      "domain": [
+       0,
+       1.05
+      ]
+     },
+     "axis": {
+      "title": "completion (pin pass-rate)",
+      "values": [
+       0,
+       0.25,
+       0.5,
+       0.75,
+       1.0
+      ],
+      "grid": true
+     }
     },
-    "view": {
-      "stroke": null
+    "color": {
+     "field": "tier",
+     "type": "nominal",
+     "scale": {
+      "domain": [
+       "strong",
+       "mid",
+       "weak"
+      ],
+      "range": [
+       "#2e9e5b",
+       "#5b8fc9",
+       "#c0392b"
+      ]
+     },
+     "legend": {
+      "title": null,
+      "orient": "bottom",
+      "offset": 10,
+      "labelExpr": "{'strong':'strong (≥0.9)','mid':'mid (0.4–0.9)','weak':'weak (<0.4)'}[datum.value]"
+     }
     }
+   }
   },
-  "layer": [
-    {
-      "mark": {
-        "type": "bar",
-        "cornerRadiusTopLeft": 3,
-        "cornerRadiusTopRight": 3
-      },
-      "encoding": {
-        "x": {
-          "field": "model",
-          "type": "nominal",
-          "sort": [
-            "k3"
-          ],
-          "axis": {
-            "title": null,
-            "labelFontSize": 12,
-            "labelLimit": 0
-          }
-        },
-        "y": {
-          "field": "pass",
-          "type": "quantitative",
-          "scale": {
-            "domain": [
-              0,
-              23
-            ]
-          },
-          "axis": {
-            "title": "cases passed (/ 23)",
-            "values": [
-              0,
-              5,
-              10,
-              15,
-              20,
-              23
-            ]
-          }
-        },
-        "color": {
-          "field": "model",
-          "type": "nominal",
-          "scale": {
-            "domain": [
-              "k3"
-            ],
-            "range": [
-              "#26C6DA"
-            ]
-          },
-          "legend": null
-        }
-      }
+  {
+   "data": {
+    "values": [
+     {
+      "face": "text",
+      "v": 1.0,
+      "tier": "strong",
+      "lab": "3/3 cases, pins perfect"
+     },
+     {
+      "face": "ops",
+      "v": 1.0,
+      "tier": "strong",
+      "lab": "6/6 cases clean"
+     },
+     {
+      "face": "req-drift",
+      "v": 1.0,
+      "tier": "strong",
+      "lab": "all 4 variants green"
+     },
+     {
+      "face": "build",
+      "v": 0.958,
+      "tier": "strong",
+      "lab": "5/6 cases, two perfect"
+     },
+     {
+      "face": "vision",
+      "v": 0.778,
+      "tier": "mid",
+      "lab": "riding-line case passed (3.0)"
+     },
+     {
+      "face": "review",
+      "v": 0.556,
+      "tier": "mid",
+      "lab": "one pass, one fail (-2)"
+     },
+     {
+      "face": "verify",
+      "v": 0.481,
+      "tier": "mid",
+      "lab": "0/3 cases"
+     },
+     {
+      "face": "ui-build",
+      "v": 0.0,
+      "tier": "weak",
+      "lab": "missing deliverable file"
+     }
+    ]
+   },
+   "mark": {
+    "type": "text",
+    "fontSize": 11,
+    "align": "left",
+    "dx": 6,
+    "color": "#444"
+   },
+   "encoding": {
+    "y": {
+     "field": "face",
+     "type": "ordinal"
     },
-    {
-      "mark": {
-        "type": "text",
-        "align": "center",
-        "baseline": "bottom",
-        "dy": -5,
-        "fontSize": 13,
-        "color": "#006064"
-      },
-      "encoding": {
-        "x": {
-          "field": "model",
-          "type": "nominal",
-          "sort": [
-            "k3"
-          ],
-          "axis": {
-            "title": null,
-            "labelFontSize": 12,
-            "labelLimit": 0
-          }
-        },
-        "y": {
-          "field": "pass",
-          "type": "quantitative",
-          "scale": {
-            "domain": [
-              0,
-              23
-            ]
-          },
-          "axis": {
-            "title": "cases passed (/ 23)",
-            "values": [
-              0,
-              5,
-              10,
-              15,
-              20,
-              23
-            ]
-          }
-        },
-        "text": {
-          "field": "pass",
-          "type": "quantitative"
-        }
-      }
+    "x": {
+     "field": "v",
+     "type": "quantitative"
     },
-    {
-      "mark": {
-        "type": "text",
-        "align": "center",
-        "baseline": "bottom",
-        "dy": -22,
-        "fontSize": 10,
-        "color": "#8D6E63"
-      },
-      "encoding": {
-        "x": {
-          "field": "model",
-          "type": "nominal",
-          "sort": [
-            "k3"
-          ],
-          "axis": {
-            "title": null,
-            "labelFontSize": 12,
-            "labelLimit": 0
-          }
-        },
-        "y": {
-          "field": "pass",
-          "type": "quantitative",
-          "scale": {
-            "domain": [
-              0,
-              23
-            ]
-          },
-          "axis": {
-            "title": "cases passed (/ 23)",
-            "values": [
-              0,
-              5,
-              10,
-              15,
-              20,
-              23
-            ]
-          }
-        },
-        "text": {
-          "field": "subset",
-          "type": "nominal"
-        }
-      }
+    "text": {
+     "field": "lab"
     }
-  ]
+   }
+  }
+ ]
 }
