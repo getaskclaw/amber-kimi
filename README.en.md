@@ -6,7 +6,7 @@ Public results from running Kimi (Moonshot AI)'s official coding endpoint (`api.
 ## What this is
 
 - One `results/YYYY-Www.md` per period: same paper, same harness, full library; models and effort bands of this endpoint side by side.
-- Each issue reports: library size and hashes, per-case d2 score and pass/fail, terminal states, token usage and latency, environment fingerprint, and qualitative verdicts written under an evidence discipline.
+- Each issue reports: library size and hashes, per-case defect-hunt score and pass/fail, terminal states, token usage and latency, environment fingerprint, and qualitative verdicts written under an evidence discipline.
 - Questions, oracles, transcripts and intermediate artifacts are **never published** (see "Publication discipline" below).
 - Sister repos: [amber-gpt](https://github.com/getaskclaw/amber-gpt), [amber-crof](https://github.com/getaskclaw/amber-crof), [amber-ollama](https://github.com/getaskclaw/amber-ollama), [amber-devin](https://github.com/getaskclaw/amber-devin), [amber-opencode](https://github.com/getaskclaw/amber-opencode), [amber-commandcode](https://github.com/getaskclaw/amber-commandcode), [amber-deepseek](https://github.com/getaskclaw/amber-deepseek), [amber-workbuddy](https://github.com/getaskclaw/amber-workbuddy). This repo's comparison axis is **models and effort bands of Kimi's official coding endpoint** — first entry is k3 @ high, full library; sibling models (`k3-256k`, `kimi-for-coding`, …) and other bands join later. Cross-repo citations always carry date and band.
 - AMBER is an agentic, real-world-task benchmark (coding / ops / review / vision / requirement-drift). Spec and tooling: [getaskclaw/amber](https://github.com/getaskclaw/amber); the questions themselves stay private.
