@@ -5,11 +5,13 @@ Public results from running Kimi (Moonshot AI)'s official coding endpoint (`api.
 
 ## What this is
 
-- One `results/YYYY-Www.md` per period: same paper, same harness, full library; models and effort bands of this endpoint side by side.
-- Each issue reports: library size and hashes, per-case defect-hunt score and pass/fail, terminal states, token usage and latency, environment fingerprint, and qualitative verdicts written under an evidence discipline.
-- Questions, oracles, transcripts and intermediate artifacts are **never published** (see "Publication discipline" below).
+- A 'lane' is one vendor's shop/API for a model name; a 'case' is one task, a 'run' is one sitting (a multi-variant case has several runs).
+
+- One `results/YYYY-Www.md` per period: same paper, same harness (the program that runs the exam and scores it), full library; models and effort band (the thinking-effort setting)s of this endpoint side by side.
+- Each issue reports: library size and hashes, per-case defect-hunt score and pass/fail, terminal states (how the run process exited), token usage and latency, environment fingerprint, and qualitative verdicts written under an evidence discipline.
+- Questions, oracles, transcripts (full answer logs)s and intermediate artifacts are **never published** (see "Publication discipline" below).
 - Sister repos: [amber-gpt](https://github.com/getaskclaw/amber-gpt), [amber-crof](https://github.com/getaskclaw/amber-crof), [amber-ollama](https://github.com/getaskclaw/amber-ollama), [amber-devin](https://github.com/getaskclaw/amber-devin), [amber-opencode](https://github.com/getaskclaw/amber-opencode), [amber-commandcode](https://github.com/getaskclaw/amber-commandcode), [amber-deepseek](https://github.com/getaskclaw/amber-deepseek), [amber-workbuddy](https://github.com/getaskclaw/amber-workbuddy), [amber-doubao](https://github.com/getaskclaw/amber-doubao), [amber-goldenpotato](https://github.com/getaskclaw/amber-goldenpotato), [amber-stepfun](https://github.com/getaskclaw/amber-stepfun). This repo's comparison axis is **models and effort bands of Kimi's official coding endpoint** — first entry is k3 @ high, full library; sibling models (`k3-256k`, `kimi-for-coding`, …) and other bands join later. Cross-repo citations always carry date and band.
-- AMBER is an agentic, real-world-task benchmark (coding / ops / review / vision / requirement-drift). Spec and tooling: [getaskclaw/amber](https://github.com/getaskclaw/amber); the questions themselves stay private.
+- AMBER is an agentic, real-world-task benchmark (coding / ops / review / vision / requirement-drift (the requirements change mid-task)). Spec and tooling: [getaskclaw/amber](https://github.com/getaskclaw/amber); the questions themselves stay private.
 
 ## W38 in one minute
 
@@ -28,7 +30,7 @@ On Sep 11 Moonshot silently re-pointed `kimi-for-coding` to **K2.8 Preview** (mo
 
 1. We publish: scores and aggregates, token usage, speed, qualitative verdicts.
 2. We never publish: question content, oracles/scorers, transcripts, candidate workspaces, or any intermediate artifact that could reconstruct a question.
-3. Every issue pins: model ID, effort band, date (UTC), harness version, and a per-case content hash (bundle_sha). Hashes are checked against the public hash index in [amber](https://github.com/getaskclaw/amber) to prove the paper has not changed.
+3. Every issue pins: model ID, effort band, date (UTC), harness version, and a per-case content hash (bundle_sha (per-case content-hash fingerprint)). Hashes are checked against the public hash index in [amber](https://github.com/getaskclaw/amber) to prove the paper has not changed.
 4. Case numbering and question structure are private: public results refer to cases only by stable aliases (A-xxxxxxxx, hash-derived) plus the bundle hash; internal case IDs, variant names, and question descriptions never appear.
 5. Tone: this is community measurement, not an attack on any vendor. Let the data speak; keep the wording restrained.
 
