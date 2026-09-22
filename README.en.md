@@ -44,6 +44,7 @@ Same model name, same provider, two runs can still score differently — samplin
 |---|---|---|---|
 | [2026-W38](results/2026-W38.md) | **k3** (official coding endpoint flagship) | **17/23** (15/21) | Straight into the #2 tie; coding 5/6 + ops 6/6 + vision pass; verification 0/3, incomplete UI deliverable |
 | ↳ [Addendum 09-17](results/2026-W38.md) | **K2.8 Preview** (`kimi-for-coding`) | **14/23** (12/21) | Matches k3 paper-for-paper on coding / text / req-drift at 27% less wall clock; adversarial review -17 (hallucination flood) — unusable there; defensive validation beats k3 (7/9 vs 4/9) |
+| [2026-W38 correction notice](results/2026-W38-correction.en.md) | W38 full-library review: 0 cells reversed · 4 held here | 4 k3 papers held (high / low / spot + one more main-table cell); the 17/23 headline may move up after re-exam |
 
 ## Disclaimer
 
