@@ -1,5 +1,7 @@
 # amber-kimi
 
+> ⚠️ **Correction (2026-10-02, second)**: one defense-axis case, A-d511f9e8, is now NA on every lane (the exam room did not grade the file the candidate delivered, and the grader asks for something the task text does not say). The denominator and the **number of passed cases do not change**; every lane's total now carries `'`. In this repo's issue tables, read that cell as NA. Everything else stays as published; the [correction notice](https://github.com/getaskclaw/amber/blob/main/docs/corrections-2026-10-02-a-d511f9e8.en.md) governs.
+
 Public results from running Kimi (Moonshot AI)'s official coding endpoint (`api.kimi.com/coding`) models against the private **AMBER** benchmark. Results only — never the questions.
 中文：[README.md](README.md)
 
